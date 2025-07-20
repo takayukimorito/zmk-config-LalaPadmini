@@ -190,10 +190,10 @@
         TERTIARY_LAYER {
             display-name = "tertiary_layer";
             bindings = <
-&kp EXCLAMATION       &kp AT_SIGN        &kp HASH      &kp DOLLAR            &kp PERCENT            &kp PAGE_UP    &kp HOME  &kp UP_ARROW  &kp END    &kp PRINTSCREEN
-&kp CARET             &kp AMPERSAND      &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PAGE_DOWN  &kp LEFT  &kp DOWN      &kp RIGHT  &none
-&mt LEFT_SHIFT TILDE  &kp DOUBLE_QUOTES  &kp COLON     &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp BACKSLASH  &mkp MB4  &none         &mkp MB5   &kp RIGHT_SHIFT
-&trans                &trans                           &trans                &trans                 &trans         &trans                  &trans     &trans
+&kp EXCLAMATION  &kp AT_SIGN        &kp HASH      &kp DOLLAR            &kp PERCENT            &kp PAGE_UP    &kp HOME     &kp UP_ARROW  &kp END    &kp PRINTSCREEN
+&kp CARET        &kp AMPERSAND      &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp PAGE_DOWN  &kp LEFT     &kp DOWN      &kp RIGHT  &none
+&kp LEFT_SHIFT   &kp DOUBLE_QUOTES  &kp COLON     &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp BACKSLASH  &kp PAGE_UP  &none         &mkp MB5   &kp RIGHT_SHIFT
+&trans           &trans                           &trans                &trans                 &trans         &trans                     &trans     &trans
             >;
 
             sensor-bindings = <&scroll_left_right>, <&scroll_left_right>;
@@ -248,6 +248,15 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans          &trans  &trans  &trans  &trans          &trans  &trans
+            >;
+        };
+
+        layer_8 {
+            bindings = <
+&kp LS(EXCL)  &kp LS(AT)  &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)  &kp LS(CARET)  &kp LS(AMPS)  &kp LS(STAR)   &kp LS(LPAR)  &kp LS(RPAR)
+&trans        &trans      &trans         &trans        &trans         &kp MINUS      &kp EQUAL     &kp GRAVE      &kp LBKT      &kp RBKT
+&trans        &trans      &trans         &trans        &trans         &kp LS(UNDER)  &kp LS(PLUS)  &kp LS(TILDE)  &kp LS(LBRC)  &kp LS(RIGHT_BRACE)
+&trans        &trans                     &trans        &trans         &trans         &trans                       &trans        &trans
             >;
         };
     };
