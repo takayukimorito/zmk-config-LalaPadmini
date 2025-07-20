@@ -158,6 +158,18 @@
             tap-ms = <20>;
             label = "VOLUME_DOWN_UP";
         };
+
+        mkt2: mkt2 {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <125>;
+            bindings = <&mo>, <&mkp>;
+
+            label = "MKT2";
+        };
     };
 
     combos {
@@ -196,10 +208,10 @@
             sensor-bindings = <&scroll_up_down>, <&scroll_down_up>;
 
             bindings = <
-&mt2 TAB Q        &kp W         &kp E  &kp R                &kp T        &kp Y            &kp U        &kp I         &kp O                    &kp P
-&mt2 LCTRL A      &kp S         &kp D  &kp F                &kp G        &kp H            &kp J        &mkp2 LCLK K  &lt 5 L                  &mt RIGHT_SHIFT MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C  &kp V                &kp B        &kp N            &kp M        &kp COMMA     &kp PERIOD               &mt RCTRL SLASH
-&kp LCTRL         &kp LEFT_ALT         &mt2 LEFT_WIN SPACE  &esc_system  &lt 2 BACKSPACE  &lt 8 ENTER                &mt CAPSLOCK LANGUAGE_2  &mt RCTRL LANGUAGE_1
+&mt2 TAB Q         &kp W         &kp E  &kp R                &kp T        &kp Y            &kp U        &kp I         &kp O                    &kp P
+&mt2 LCTRL A       &kp S         &kp D  &kp F                &kp G        &kp H            &kp J        &mkp2 LCLK K  &lt 5 L                  &mt2 RIGHT_SHIFT MINUS
+&mt2 LEFT_SHIFT Z  &kp X         &kp C  &kp V                &kp B        &kp N            &kp M        &kp COMMA     &kp PERIOD               &mt2 RCTRL SLASH
+&kp LCTRL          &kp LEFT_ALT         &mt2 LEFT_WIN SPACE  &esc_system  &lt 2 BACKSPACE  &lt 8 ENTER                &mt CAPSLOCK LANGUAGE_2  &mt RCTRL LANGUAGE_1
             >;
         };
 
@@ -242,10 +254,10 @@
         MOUSE_R_LAYER {
             display-name = "mouse_r_layer";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans       &mkp MCLK  &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &MACRO_LTAP  &mkp LCLK  &mkp RCLK  &mo 5
-&trans  &trans  &trans  &trans  &trans  &trans  &mkp MB4     &none      &mkp MB5   &trans
-&trans  &trans          &trans  &trans  &trans  &trans                  &trans     &trans
+&trans  &trans     &trans    &trans       &trans  &trans  &trans       &mkp MB4   &mkp MB5      &trans
+&trans  &mkp RCLK  &mkp MB1  &MACRO_LTAP  &trans  &trans  &MACRO_LTAP  &mkp LCLK  &mkt2 5 MCLK  &mkp RCLK
+&trans  &trans     &trans    &trans       &trans  &trans  &trans       &none      &trans        &trans
+&trans  &trans               &trans       &trans  &trans  &trans                  &trans        &trans
             >;
         };
 
@@ -282,8 +294,8 @@
         layer_8 {
             bindings = <
 &kp LS(EXCL)       &kp LS(AT)          &kp LS(POUND)  &kp LS(DLLR)   &kp LS(PRCNT)  &kp LS(CARET)  &kp LS(AMPS)  &kp LS(STAR)   &kp LS(LPAR)  &kp LS(RPAR)
-&kp LS(SEMICOLON)  &kp LS(APOSTROPHE)  &trans         &kp LG(SPACE)  &trans         &kp MINUS      &kp EQUAL     &kp GRAVE      &kp LBKT      &kp RBKT
-&kp SEMICOLON      &kp APOSTROPHE      &trans         &kp LS(LA(S))  &trans         &kp LS(UNDER)  &kp LS(PLUS)  &kp LS(TILDE)  &kp LS(LBRC)  &kp LS(RIGHT_BRACE)
+&kp LS(SEMICOLON)  &kp LS(APOSTROPHE)  &kp EQUAL      &kp LG(SPACE)  &trans         &kp MINUS      &kp EQUAL     &kp GRAVE      &kp LBKT      &kp RBKT
+&kp SEMICOLON      &kp APOSTROPHE      &kp SLASH      &kp LS(LA(S))  &trans         &kp LS(UNDER)  &kp LS(PLUS)  &kp LS(TILDE)  &kp LS(LBRC)  &kp LS(RIGHT_BRACE)
 &trans             &trans                             &trans         &trans         &trans         &trans                       &trans        &trans
             >;
 
