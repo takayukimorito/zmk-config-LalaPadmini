@@ -149,6 +149,15 @@
             #binding-cells = <0>;
             bindings = <&lt 1 ESCAPE>, <&mo 3>;
         };
+
+        volume_down_up: volume_down_up {
+            compatible = "zmk,behavior-sensor-rotate";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp C_VOLUME_DOWN>, <&kp C_VOLUME_UP>;
+
+            tap-ms = <20>;
+            label = "VOLUME_DOWN_UP";
+        };
     };
 
     combos {
@@ -184,7 +193,7 @@
 
         DEFAULT_LAYER {
             display-name = "Default";
-            sensor-bindings = <&scroll_down_up>, <&scroll_up_down>;
+            sensor-bindings = <&scroll_up_down>, <&scroll_down_up>;
 
             bindings = <
 &mt2 TAB Q        &kp W         &kp E  &kp R                &kp T        &kp Y            &kp U        &kp I         &kp O                    &kp P
@@ -272,11 +281,13 @@
 
         layer_8 {
             bindings = <
-&kp LS(EXCL)       &kp LS(AT)          &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)  &kp LS(CARET)  &kp LS(AMPS)  &kp LS(STAR)   &kp LS(LPAR)  &kp LS(RPAR)
-&kp LS(SEMICOLON)  &kp LS(APOSTROPHE)  &kp LG(SPACE)  &trans        &trans         &kp MINUS      &kp EQUAL     &kp GRAVE      &kp LBKT      &kp RBKT
-&kp SEMICOLON      &kp APOSTROPHE      &kp LS(LA(S))  &trans        &trans         &kp LS(UNDER)  &kp LS(PLUS)  &kp LS(TILDE)  &kp LS(LBRC)  &kp LS(RIGHT_BRACE)
-&trans             &trans                             &trans        &trans         &trans         &trans                       &trans        &trans
+&kp LS(EXCL)       &kp LS(AT)          &kp LS(POUND)  &kp LS(DLLR)   &kp LS(PRCNT)  &kp LS(CARET)  &kp LS(AMPS)  &kp LS(STAR)   &kp LS(LPAR)  &kp LS(RPAR)
+&kp LS(SEMICOLON)  &kp LS(APOSTROPHE)  &trans         &kp LG(SPACE)  &trans         &kp MINUS      &kp EQUAL     &kp GRAVE      &kp LBKT      &kp RBKT
+&kp SEMICOLON      &kp APOSTROPHE      &trans         &kp LS(LA(S))  &trans         &kp LS(UNDER)  &kp LS(PLUS)  &kp LS(TILDE)  &kp LS(LBRC)  &kp LS(RIGHT_BRACE)
+&trans             &trans                             &trans         &trans         &trans         &trans                       &trans        &trans
             >;
+
+            sensor-bindings = <&volume_down_up>, <&volume_up_down>;
         };
     };
 
