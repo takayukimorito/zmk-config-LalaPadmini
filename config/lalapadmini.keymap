@@ -272,10 +272,10 @@
 
         layer_8 {
             bindings = <
-&kp LS(EXCL)  &kp LS(AT)  &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)  &kp LS(CARET)  &kp LS(AMPS)  &kp LS(STAR)   &kp LS(LPAR)  &kp LS(RPAR)
-&trans        &trans      &trans         &trans        &trans         &kp MINUS      &kp EQUAL     &kp GRAVE      &kp LBKT      &kp RBKT
-&trans        &trans      &trans         &trans        &trans         &kp LS(UNDER)  &kp LS(PLUS)  &kp LS(TILDE)  &kp LS(LBRC)  &kp LS(RIGHT_BRACE)
-&trans        &trans                     &trans        &trans         &trans         &trans                       &trans        &trans
+&kp LS(EXCL)       &kp LS(AT)          &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)  &kp LS(CARET)  &kp LS(AMPS)  &kp LS(STAR)   &kp LS(LPAR)  &kp LS(RPAR)
+&kp LS(SEMICOLON)  &kp LS(APOSTROPHE)  &kp LG(SPACE)  &trans        &trans         &kp MINUS      &kp EQUAL     &kp GRAVE      &kp LBKT      &kp RBKT
+&kp SEMICOLON      &kp APOSTROPHE      &kp LS(LA(S))  &trans        &trans         &kp LS(UNDER)  &kp LS(PLUS)  &kp LS(TILDE)  &kp LS(LBRC)  &kp LS(RIGHT_BRACE)
+&trans             &trans                             &trans        &trans         &trans         &trans                       &trans        &trans
             >;
         };
     };
