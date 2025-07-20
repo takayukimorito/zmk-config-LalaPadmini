@@ -142,6 +142,13 @@
 
             label = "MKP2";
         };
+
+        esc_system: esc_system {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ESC_SYSTEM";
+            #binding-cells = <0>;
+            bindings = <&lt 1 ESCAPE>, <&mo 3>;
+        };
     };
 
     combos {
@@ -180,10 +187,10 @@
             sensor-bindings = <&scroll_down_up>, <&scroll_up_down>;
 
             bindings = <
-&mt2 ESCAPE Q     &kp W         &kp E  &kp R                &kp T  &kp Y            &kp U        &kp I         &kp O                    &kp P
-&mt2 LCTRL A      &kp S         &kp D  &kp F                &kp G  &kp H            &kp J        &mkp2 LCLK K  &lt 5 L                  &mt2 EQUAL MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C  &kp V                &kp B  &kp N            &kp M        &kp COMMA     &kp PERIOD               &mt RSHIFT SLASH
-&kp LCTRL         &kp LEFT_ALT         &mt2 LEFT_WIN SPACE  &mo 1  &lt 2 BACKSPACE  &lt 1 ENTER                &mt CAPSLOCK LANGUAGE_2  &mt RCTRL LANGUAGE_1
+&mt2 TAB Q        &kp W         &kp E  &kp R                &kp T        &kp Y            &kp U        &kp I         &kp O                    &kp P
+&mt2 LCTRL A      &kp S         &kp D  &kp F                &kp G        &kp H            &kp J        &mkp2 LCLK K  &lt 5 L                  &mt RIGHT_SHIFT MINUS
+&mt LEFT_SHIFT Z  &kp X         &kp C  &kp V                &kp B        &kp N            &kp M        &kp COMMA     &kp PERIOD               &mt RCTRL SLASH
+&kp LCTRL         &kp LEFT_ALT         &mt2 LEFT_WIN SPACE  &esc_system  &lt 2 BACKSPACE  &lt 8 ENTER                &mt CAPSLOCK LANGUAGE_2  &mt RCTRL LANGUAGE_1
             >;
         };
 
