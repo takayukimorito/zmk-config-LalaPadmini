@@ -225,10 +225,10 @@
             sensor-bindings = <&scroll_up_down>, <&scroll_down_up>;
 
             bindings = <
-&mt2 TAB Q            &kp W         &kp E  &kp R        &kp T      &kp Y            &mt2 GLOBE U  &kp I      &kp O                           &kp P
-&mt2 LCTRL A          &lt 8 S       &kp D  &kp F        &kp G      &kp H            &mkp2 LCLK J  &lt 5 K    &mkp2 RCLK L                    &mt2 RIGHT_SHIFT MINUS
-&mt2 LEFT_SHIFT Z     &kp X         &kp C  &kp V        &kp B      &kp N            &kp M         &kp COMMA  &kp PERIOD                      &mt2 LEFT_GUI SLASH
-&mt2 LEFT_GUI ESCAPE  &kp LEFT_ALT         &lt 8 SPACE  &lt 2 TAB  &lt 2 BACKSPACE  &lt 1 ENTER              &mt2 LG(LEFT_SHIFT) LANGUAGE_2  &mt2 LA(LS(S)) LANG1
+&mt2 TAB Q            &kp W         &kp E  &kp R        &kp T      &mt2 LANGUAGE_1 Y  &mt2 GLOBE U  &kp I      &kp O                           &kp P
+&mt2 LCTRL A          &lt 8 S       &kp D  &kp F        &kp G      &mt2 LANGUAGE_2 H  &mkp2 LCLK J  &lt 5 K    &mkp2 RCLK L                    &mt2 RIGHT_SHIFT MINUS
+&mt2 LEFT_SHIFT Z     &kp X         &kp C  &kp V        &kp B      &kp N              &kp M         &kp COMMA  &kp PERIOD                      &mt2 LEFT_GUI SLASH
+&mt2 LEFT_GUI ESCAPE  &kp LEFT_ALT         &lt 8 SPACE  &lt 2 TAB  &lt 2 BACKSPACE    &lt 1 ENTER              &mt2 LG(LEFT_SHIFT) LANGUAGE_2  &mt2 LA(LS(S)) LANG1
             >;
         };
 
