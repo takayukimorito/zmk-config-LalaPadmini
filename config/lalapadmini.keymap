@@ -215,6 +215,13 @@
             bindings = <&mkp LCLK>;
             label = "MACRO_LTAP";
         };
+
+        ketugou: ketugou {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mkp MB1 &kp LA(M)>;
+            label = "KETUGOU";
+        };
     };
 
     keymap {
@@ -272,7 +279,7 @@
             display-name = "mouse_r_layer";
             bindings = <
 &trans  &trans     &trans    &trans       &trans  &trans  &MACRO_LTAP  &mkp MB4      &mkp MB5   &trans
-&trans  &mkp RCLK  &mkp MB1  &MACRO_LTAP  &trans  &trans  &mkp LCLK    &mkt2 5 MCLK  &mkp RCLK  &kp GLOBE
+&trans  &mkp RCLK  &ketugou  &MACRO_LTAP  &trans  &trans  &mkp LCLK    &mkt2 5 MCLK  &mkp RCLK  &kp GLOBE
 &trans  &trans     &trans    &trans       &trans  &trans  &trans       &none         &trans     &trans
 &trans  &trans               &trans       &trans  &trans  &trans                     &trans     &trans
             >;
