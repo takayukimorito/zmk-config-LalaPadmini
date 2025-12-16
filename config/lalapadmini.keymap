@@ -15,9 +15,11 @@
 #define SCROLL_L_LAYER  7
 
 // Mouse Scroll Value
+
 #define ZMK_POINTING_DEFAULT_SCRL_VAL 100
 
 // cirque trackpad input&layer control
+
 &glidepoint_listener_R {
     input-processors =
         <&zip_xy_transform (INPUT_TRANSFORM_XY_SWAP | INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>,
@@ -128,6 +130,27 @@
             #binding-cells = <0>;
             bindings = <&mo 1>, <&mo 2>;
         };
+
+        mkp2: mkp2 {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <125>;
+            bindings = <&mkp>, <&kp>;
+
+            label = "MKP2";
+        };
+
+        volume: volume {
+            compatible = "zmk,behavior-sensor-rotate";
+            label = "VOLUME";
+            #sensor-binding-cells = <0>;
+            bindings = <&kp C_VOL_DN>, <&kp C_VOLUME_UP>;
+
+            tap-ms = <20>;
+        };
     };
 
     combos {
@@ -166,10 +189,10 @@
             sensor-bindings = <&scroll_down_up>, <&scroll_up_down>;
 
             bindings = <
-&kp Q             &kp W         &kp E  &kp R      &kp T  &kp Y            &kp U      &kp I      &kp O                    &kp P
-&kp A             &kp S         &kp D  &kp F      &kp G  &kp H            &kp J      &kp K      &kp L                    &mt2 EQUAL MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C  &kp V      &kp B  &kp N            &kp M      &kp COMMA  &kp PERIOD               &mt RSHIFT SLASH
-&kp LCTRL         &kp LEFT_ALT         &kp SPACE  &mo 1  &lt 2 BACKSPACE  &kp ENTER             &mt CAPSLOCK LANGUAGE_2  &mt RCTRL LANGUAGE_1
+&kp Q             &kp W         &kp E              &kp R                &kp T      &kp Y            &kp U                 &kp I             &kp O         &mt2 LS(LG(D)) P
+&mt2 LCTRL A      &kp S         &mt2 LANGUAGE_2 D  &mt2 LANGUAGE_1 F    &kp G      &kp H            &mkp2 LCLK J          &mt2 LG(SPACE) K  &mkp2 RCLK L  &mt2 LEFT_SHIFT MINUS
+&mt LEFT_SHIFT Z  &kp X         &kp C              &kp V                &kp B      &kp N            &kp M                 &kp COMMA         &kp PERIOD    &mt RSHIFT SLASH
+&kp ESCAPE        &kp LEFT_ALT                     &mt2 LEFT_GUI SPACE  &lt 8 TAB  &lt 9 BACKSPACE  &mt2 RIGHT_GUI ENTER                    &mo 1         &mo 2
             >;
         };
 
@@ -181,7 +204,7 @@
 &mt2 F1 NUMBER_1  &mt2 F2 NUMBER_2  &mt2 F3 NUMBER_3  &mt2 F4 NUMBER_4  &mt2 F5 N5         &kp KP_COMMA     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_DIVIDE
 &mt2 F6 NUMBER_6  &mt2 F7 N7        &mt2 F8 N8        &mt2 F9 N9        &mt2 F10 N0        &kp KP_DOT       &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_ASTERISK
 &mt2 F11 GRAVE    &mt2 F12 SQT      &kp SEMICOLON     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_MINUS
-&trans            &trans                              &trans            &trans             &kp DELETE       &trans                            &none            &kp KP_PLUS
+&trans            &trans                              &trans            &trans             &kp DELETE       &trans                            &trans           &trans
             >;
         };
 
@@ -212,10 +235,10 @@
         MOUSE_R_LAYER {
             display-name = "mouse_r_layer";
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans       &mkp MCLK  &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &MACRO_LTAP  &mkp LCLK  &mkp RCLK  &mo 5
-&trans  &trans  &trans  &trans  &trans  &trans  &mkp MB4     &none      &mkp MB5   &trans
-&trans  &trans          &trans  &trans  &trans  &trans                  &trans     &trans
+&trans  &trans  &trans  &trans     &trans  &trans  &trans     &mkp MCLK         &mkp MB4   &mkp MB5
+&trans  &trans  &trans  &mkp LCLK  &trans  &trans  &mkp LCLK  &mt2 LG(SPACE) K  &mkp RCLK  &mo 5
+&trans  &trans  &trans  &trans     &trans  &trans  &mkp MB4   &none             &mkp MB5   &trans
+&trans  &trans          &trans     &trans  &trans  &trans                       &trans     &trans
             >;
         };
 
@@ -247,6 +270,28 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans          &trans  &trans  &trans  &trans          &trans  &trans
             >;
+        };
+
+        layer_8 {
+            bindings = <
+&kp LS(N1)    &kp LS(N2)    &kp LS(N3)  &kp LS(N4)  &kp LS(N5)  &kp LS(N6)     &kp LS(N7)     &kp LS(N8)     &kp LS(N9)    &kp LS(N0)
+&kp SEMI      &kp APOS      &trans      &trans      &trans      &kp MINUS      &kp EQUAL      &kp GRAVE      &kp LBKT      &kp RBKT
+&kp LS(SEMI)  &kp LS(APOS)  &trans      &trans      &trans      &kp LS(MINUS)  &kp LS(EQUAL)  &kp LS(GRAVE)  &kp LS(LBKT)  &kp LS(RBKT)
+&trans        &trans                    &trans      &trans      &trans         &trans                        &trans        &trans
+            >;
+
+            sensor-bindings = <&volume>;
+        };
+
+        layer_9 {
+            bindings = <
+&kp N1   &kp N2   &kp N3  &kp N4  &kp N5   &kp N6          &kp N7          &kp N8        &kp N9           &kp N0
+&kp F1   &kp F2   &kp F3  &kp F4  &kp F5   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans
+&kp F6   &kp F7   &kp F8  &kp F9  &kp F10  &kp HOME        &kp PG_UP       &kp PG_DN     &kp END          &trans
+&kp F11  &kp F12          &trans  &trans   &trans          &trans                        &trans           &trans
+            >;
+
+            sensor-bindings = <&volume>;
         };
     };
 
