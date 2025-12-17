@@ -280,7 +280,7 @@
 &trans        &trans                    &trans      &trans      &trans         &trans                        &trans        &trans
             >;
 
-            sensor-bindings = <&volume>;
+            sensor-bindings = <&volume_up_down>;
         };
 
         layer_9 {
@@ -291,7 +291,7 @@
 &kp F11  &kp F12          &trans  &trans   &trans          &trans                        &trans           &trans
             >;
 
-            sensor-bindings = <&volume>;
+            sensor-bindings = <&volume_up_down>;
         };
     };
 
