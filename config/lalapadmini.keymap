@@ -214,7 +214,7 @@
         bt_win: bt_win {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 3 &to 8>;
+            bindings = <&bt BT_SEL 2 &to 8>;
             label = "BT_WIN";
         };
     };
