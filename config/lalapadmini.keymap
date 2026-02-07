@@ -175,6 +175,18 @@
 
             label = "BT_KP_WIN";
         };
+
+        bt_kp_and: bt_kp_and {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <200>;
+            require-prior-idle-ms = <125>;
+            bindings = <&bt_android>, <&kp>;
+
+            label = "BT_KP_AND";
+        };
     };
 
     combos {
@@ -217,6 +229,13 @@
             bindings = <&bt BT_SEL 2 &to 8>;
             label = "BT_WIN";
         };
+
+        bt_android: bt_android {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 3 &to 8>;
+            label = "BT_ANDROID";
+        };
     };
 
     keymap {
@@ -227,10 +246,10 @@
             sensor-bindings = <&scroll_down_up>, <&scroll_up_down>;
 
             bindings = <
-&kp Q             &kp W         &kp E              &kp R              &kp T           &kp Y             &kp U                 &kp I             &kp O         &mt2 LS(LG(D)) P
-&mt2 LCTRL A      &kp S         &mt2 LANGUAGE_2 D  &mt2 LANGUAGE_1 F  &kp G           &kp H             &mkp2 LCLK J          &mt2 LG(SPACE) K  &mkp2 RCLK L  &mt2 LEFT_SHIFT MINUS
-&mt LEFT_SHIFT Z  &kp X         &kp C              &kp V              &bt_kp_win 0 B  &kp N             &kp M                 &kp COMMA         &kp PERIOD    &mt RSHIFT SLASH
-&kp ESCAPE        &kp LEFT_ALT                     &kp SPACE          &lt 9 TAB       &lt 10 BACKSPACE  &mt2 RIGHT_GUI ENTER                    &mo 1         &mo 2
+&kp Q                &kp W         &kp E              &kp R              &kp T           &kp Y             &kp U                 &kp I             &kp O         &mt2 LS(LG(D)) P
+&mt2 LCTRL A         &kp S         &mt2 LANGUAGE_2 D  &mt2 LANGUAGE_1 F  &kp G           &kp H             &mkp2 LCLK J          &mt2 LG(SPACE) K  &mkp2 RCLK L  &mt2 LEFT_SHIFT MINUS
+&mt LEFT_SHIFT Z     &kp X         &kp C              &kp V              &bt_kp_win 0 B  &kp N             &kp M                 &kp COMMA         &kp PERIOD    &mt RSHIFT SLASH
+&bt_kp_and 0 ESCAPE  &kp LEFT_ALT                     &kp SPACE          &lt 9 TAB       &lt 10 BACKSPACE  &mt2 RIGHT_GUI ENTER                    &mo 1         &mo 2
             >;
         };
 
@@ -310,7 +329,7 @@
             >;
         };
 
-        win {
+        win_android {
             bindings = <
 &kp Q                 &kp W     &kp E              &kp R              &kp T           &kp Y             &kp U             &kp I             &kp O         &kp P
 &mt2 LCTRL A          &kp S     &mt2 LANGUAGE_2 D  &mt2 LANGUAGE_1 F  &kp G           &kp H             &mkp2 LCLK J      &mt2 LC(SPACE) K  &mkp2 RCLK L  &mt2 LEFT_SHIFT MINUS
