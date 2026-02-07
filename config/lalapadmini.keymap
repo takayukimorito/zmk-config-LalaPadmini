@@ -128,7 +128,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "td_mo12";
             #binding-cells = <0>;
-            bindings = <&mo 1>, <&mo 2>;
+            bindings = <&mo 9>, <&mo 2>;
         };
 
         mkp2: mkp2 {
@@ -226,14 +226,14 @@
         bt_win: bt_win {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 2 &to 8>;
+            bindings = <&bt BT_SEL 2 &to 1>;
             label = "BT_WIN";
         };
 
         bt_android: bt_android {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 3 &to 8>;
+            bindings = <&bt BT_SEL 3 &to 1>;
             label = "BT_ANDROID";
         };
     };
@@ -253,16 +253,15 @@
             >;
         };
 
-        SECONDARY_LAYER {
-            display-name = "secondary_layer";
-            sensor-bindings = <&scroll_left_right>, <&scroll_left_right>;
-
+        win_android {
             bindings = <
-&mt2 F1 NUMBER_1  &mt2 F2 NUMBER_2  &mt2 F3 NUMBER_3  &mt2 F4 NUMBER_4  &mt2 F5 N5         &kp KP_COMMA     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_DIVIDE
-&mt2 F6 NUMBER_6  &mt2 F7 N7        &mt2 F8 N8        &mt2 F9 N9        &mt2 F10 N0        &kp KP_DOT       &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_ASTERISK
-&mt2 F11 GRAVE    &mt2 F12 SQT      &kp SEMICOLON     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_MINUS
-&trans            &trans                              &trans            &trans             &kp DELETE       &trans                            &trans           &trans
+&kp Q                 &kp W     &kp E              &kp R              &kp T           &kp Y             &kp U             &kp I             &kp O         &kp P
+&mt2 LCTRL A          &kp S     &mt2 LANGUAGE_2 D  &mt2 LANGUAGE_1 F  &kp G           &kp H             &mkp2 LCLK J      &mt2 LC(SPACE) K  &mkp2 RCLK L  &mt2 LEFT_SHIFT MINUS
+&mt2 LEFT_SHIFT Z     &kp X     &kp C              &kp V              &bt_kp_mac 0 B  &kp N             &kp M             &kp COMMA         &kp DOT       &kp FSLH
+&mt2 LEFT_WIN ESCAPE  &kp LALT                     &kp SPACE          &lt 9 TAB       &lt 10 BACKSPACE  &mt2 LCTRL ENTER                    &trans        &trans
             >;
+
+            sensor-bindings = <&scroll_down_up>;
         };
 
         TERTIARY_LAYER {
@@ -329,15 +328,16 @@
             >;
         };
 
-        win_android {
-            bindings = <
-&kp Q                 &kp W     &kp E              &kp R              &kp T           &kp Y             &kp U             &kp I             &kp O         &kp P
-&mt2 LCTRL A          &kp S     &mt2 LANGUAGE_2 D  &mt2 LANGUAGE_1 F  &kp G           &kp H             &mkp2 LCLK J      &mt2 LC(SPACE) K  &mkp2 RCLK L  &mt2 LEFT_SHIFT MINUS
-&mt2 LEFT_SHIFT Z     &kp X     &kp C              &kp V              &bt_kp_mac 0 B  &kp N             &kp M             &kp COMMA         &kp DOT       &kp FSLH
-&mt2 LEFT_WIN ESCAPE  &kp LALT                     &kp SPACE          &lt 9 TAB       &lt 10 BACKSPACE  &mt2 LCTRL ENTER                    &trans        &trans
-            >;
+        SECONDARY_LAYER {
+            display-name = "secondary_layer";
+            sensor-bindings = <&scroll_left_right>, <&scroll_left_right>;
 
-            sensor-bindings = <&scroll_down_up>;
+            bindings = <
+&mt2 F1 NUMBER_1  &mt2 F2 NUMBER_2  &mt2 F3 NUMBER_3  &mt2 F4 NUMBER_4  &mt2 F5 N5         &kp KP_COMMA     &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_DIVIDE
+&mt2 F6 NUMBER_6  &mt2 F7 N7        &mt2 F8 N8        &mt2 F9 N9        &mt2 F10 N0        &kp KP_DOT       &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_ASTERISK
+&mt2 F11 GRAVE    &mt2 F12 SQT      &kp SEMICOLON     &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp KP_NUMBER_0  &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_MINUS
+&trans            &trans                              &trans            &trans             &kp DELETE       &trans                            &trans           &trans
+            >;
         };
 
         layer_8 {
@@ -367,7 +367,7 @@
         compatible = "zmk,conditional-layers";
 
         System_layer {
-            if-layers = <1 2>;
+            if-layers = <9 2>;
             then-layer = <3>;
         };
     };
