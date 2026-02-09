@@ -248,7 +248,7 @@
             bindings = <
 &kp Q                &kp W         &kp E              &kp R              &kp T           &kp Y             &kp U                 &kp I             &kp O         &mt2 LS(LG(D)) P
 &mt2 LCTRL A         &kp S         &mt2 LANGUAGE_2 D  &mt2 LANGUAGE_1 F  &kp G           &kp H             &mkp2 LCLK J          &mt2 LG(SPACE) K  &mkp2 RCLK L  &mt2 LEFT_SHIFT MINUS
-&mt LEFT_SHIFT Z     &kp X         &kp C              &kp V              &bt_kp_win 0 B  &kp N             &kp M                 &kp COMMA         &kp PERIOD    &mt RSHIFT SLASH
+&mt2 LEFT_SHIFT Z    &kp X         &kp C              &kp V              &bt_kp_win 0 B  &kp N             &kp M                 &kp COMMA         &kp PERIOD    &mt RSHIFT SLASH
 &bt_kp_and 0 ESCAPE  &kp LEFT_ALT                     &kp SPACE          &lt 9 TAB       &lt 10 BACKSPACE  &mt2 RIGHT_GUI ENTER                    &mo 1         &mo 2
             >;
         };
